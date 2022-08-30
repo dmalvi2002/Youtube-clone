@@ -26,8 +26,8 @@ a {
 }
 
 .category-btn:hover {
-  background-color: #fc1503 !important;
-  color: white !important;
+  background-color: #3d56fc !important;
+  color: #fff !important;
 }
 
 .category-btn:hover span {
