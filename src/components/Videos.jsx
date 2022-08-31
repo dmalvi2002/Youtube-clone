@@ -1,10 +1,11 @@
 import React from 'react';
 import { Stack, Box } from '@mui/system';
 import { VideoCard, ChannelCard } from './export';
+import LoadingSpinner from './UI/LoadingSpinner';
 
 const Videos = ({ videos, direction }) => {
   // Loading spinner
-  if (!videos?.length) return 'Loading...';
+  if (!videos?.length) return <LoadingSpinner />;
 
   // Fetching videos from the videos prop
   return (

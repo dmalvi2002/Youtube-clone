@@ -5,6 +5,7 @@ import { Typography, Box, Stack } from '@mui/material';
 import { CheckCircle } from '@mui/icons-material';
 import { Videos } from "./export";
 import { fetchFromApi } from '../utils/fetch';
+import LoadingSpinner from './UI/LoadingSpinner';
 
 const typoStyles = {
   display: "flex",
@@ -25,7 +26,7 @@ const VideoDetail = () => {
       .then(data => setrelatedVideos(data.items));
   }, [id]);
 
-  if (!videoDetail?.snippet) return 'Loading...';
+  if (!videoDetail?.snippet) return <LoadingSpinner />;
 
   const {
     snippet: { title, channelId, channelTitle },
