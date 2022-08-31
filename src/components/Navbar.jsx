@@ -6,7 +6,7 @@ import SearchBar from './SearchBar';
 
 const navStyles = {
   position: "sticky",
-  background: "#f5f5f5",
+  backgroundColor: "#f5f5f5",
   top: "0",
   justifyContent: "space-between"
 };

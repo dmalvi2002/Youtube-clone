@@ -17,7 +17,7 @@ export const logo =
 
 export const categories = [
   { id: 1, name: "New", icon: <HomeIcon /> },
-  { id: 2, name: "dmalvi2002", icon: <CodeIcon /> },
+  { id: 2, name: "Dmalvi2002", icon: <CodeIcon /> },
   { id: 3, name: "Coding", icon: <CodeIcon /> },
   { id: 4, name: "ReactJS", icon: <CodeIcon /> },
   { id: 5, name: "NextJS", icon: <CodeIcon /> },
@@ -35,11 +35,11 @@ export const categories = [
   { id: 17, name: "Crypto", icon: <DeveloperModeIcon /> },
 ];
 
-export const demoThumbnailUrl = "https://i.ibb.co/G2L2Gwp/API-Course.png";
-export const demoChannelUrl = "/channel/UCmXmlB4-HJytD7wek0Uo97A";
-export const demoVideoUrl = "/video/GDa8kZLNhJ4";
-export const demoChannelTitle = "JavaScript Mastery";
-export const demoVideoTitle =
-  "Build and Deploy 5 JavaScript & React API Projects in 10 Hours - Full Course | RapidAPI";
+export const demoThumbnailUrl =
+  "https://img.youtube.com/vi/jr6fpwQxGew/hqdefault.jpg";
+export const demoChannelUrl = "/channel/UCM4a6qhPV2zo1CNJImx0JUg";
+export const demoVideoUrl = "/video/jr6fpwQxGew";
+export const demoChannelTitle = "Dmalvi2002";
+export const demoVideoTitle = "Animated website for you";
 export const demoProfilePicture =
-  "http://dergipark.org.tr/assets/app/images/buddy_sample.png";
+  "https://yt3.ggpht.com/ytc/AMLnZu_lWjnZfm5owUFfsqvhjf79Bj8ASoyVvE1ENeUDHA=s176-c-k-c0x00ffffff-no-rj";
