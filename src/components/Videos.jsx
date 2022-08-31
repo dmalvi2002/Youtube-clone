@@ -8,7 +8,7 @@ const Videos = ({ videos, direction }) => {
 
   // Fetching videos from the videos prop
   return (
-    <Stack direction={direction || "row"} flexWrap="wrap" justifyContent="start" gap={2}>
+    <Stack direction={direction || "row"} flexWrap="wrap" gap={2} sx={{ justifyContent: { xs: "center", sm: "center", md: "start" }, alignItems: { xs: "center", sm: "center", md: "start" } }}>
       {
         videos.map((video, index) => (
           <Box key={index}>

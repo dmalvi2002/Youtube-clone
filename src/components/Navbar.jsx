@@ -8,7 +8,8 @@ const navStyles = {
   position: "sticky",
   backgroundColor: "#f5f5f5",
   top: "0",
-  justifyContent: "space-between"
+  justifyContent: "space-between",
+  zIndex: 10000
 };
 
 const Navbar = () => {

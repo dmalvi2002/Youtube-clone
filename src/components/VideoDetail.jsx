@@ -43,7 +43,7 @@ const VideoDetail = () => {
               className='react-player'
               controls
             />
-            <Typography variant="h5" fontWeight="bold" p={2}>
+            <Typography p={2} variant="h5" fontWeight="bold">
               {title}
             </Typography>
             <Stack
@@ -59,17 +59,17 @@ const VideoDetail = () => {
                 </Typography>
               </Link>
               <Stack direction="row" gap="20px" alignItems="center">
-                <Typography variant='subtitle1' sx={{ opacity: 0.5 }}>
+                <Typography variant='subtitle2' sx={{ opacity: 0.5 }}>
                   {parseInt(viewCount).toLocaleString()} views
                 </Typography>
-                <Typography variant='subtitle1' sx={{ opacity: 0.5 }}>
+                <Typography variant='subtitle2' sx={{ opacity: 0.5 }}>
                   {parseInt(likeCount).toLocaleString()} likes
                 </Typography>
               </Stack>
             </Stack>
           </Box>
         </Box>
-        <Box px={2} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center">
+        <Box py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center" sx={{ px: { sm: '0', md: "10px" } }}>
           <Videos videos={relatedVideos} direction="column" />
         </Box>
       </Stack>

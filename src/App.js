@@ -22,6 +22,17 @@ const App = () => {
           <Route path="/search/:searchTerm" element={<SearchFeed />} />
         </Routes>
       </Box>
+      <p
+        style={{
+          textAlign: "center",
+          fontSize: "14px",
+          color: "grey",
+          fontFamily: "sans-serif",
+        }}
+      >
+        Made by <a href="www.dmalvi2002.com">Dmalvi2002.</a> Still in
+        development.
+      </p>
     </BrowserRouter>
   );
 };

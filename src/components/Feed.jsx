@@ -4,7 +4,7 @@ import { Sidebar, Videos } from './export';
 import { fetchFromApi } from '../utils/fetch';
 
 const stackStyles = { flexDirection: { sx: "column", md: "row" } };
-const box1styles = { height: { sx: "auto", md: "92vh" }, borderRight: "1px solid #5e5e5e", px: { sx: 0, md: 2 } };
+const box1styles = { height: { sx: "auto", md: "92vh" }, borderRight: "1px solid #3d56fc", px: { sx: 0, md: 2 } };
 const box2styles = { overflowY: "auto", height: "90vh", flex: 2 };
 
 const Feed = () => {
@@ -29,7 +29,7 @@ const Feed = () => {
 
         <Typography
           className='copyright'
-          varient="body2"
+          varient="subtitle2"
           sx={{ mt: 1.5, fontSize: "13px" }}>
           Copyright 2022 dmalvi2002
         </Typography>
