@@ -19,7 +19,6 @@ const cardMediaStyles = {
 
 const typoStyles = {
   display: "flex",
-  flexDirection: "row",
   justifyContent: "center",
   alignItems: "center"
 };

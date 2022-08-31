@@ -6,14 +6,32 @@ import { CheckCircle } from '@mui/icons-material';
 import { Videos } from "./export";
 import { fetchFromApi } from '../utils/fetch';
 
+const typoStyles = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center"
+};
+
 const VideoDetail = () => {
   const { id } = useParams();
   const [videoDetail, setvideoDetail] = useState(null);
+  const [relatedVideos, setrelatedVideos] = useState([]);
 
   useEffect(() => {
     fetchFromApi(`videos?part=snippet,statistics&id=${id}`)
       .then(data => setvideoDetail(data.items[0]));
+
+    fetchFromApi(`search?part=snippet&relatedToVideoId=${id}`)
+      .then(data => setrelatedVideos(data.items));
   }, [id]);
+
+  if (!videoDetail?.snippet) return 'Loading...';
+
+  const {
+    snippet: { title, channelId, channelTitle },
+    statistics: { viewCount, likeCount }
+
+  } = videoDetail;
 
   return (
     <Box minHeight="95vh">
@@ -25,9 +43,37 @@ const VideoDetail = () => {
               className='react-player'
               controls
             />
+            <Typography variant="h5" fontWeight="bold" p={2}>
+              {title}
+            </Typography>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              py={1}
+              px={2}
+            >
+              <Link to={`channel/${channelId}`}>
+                <Typography variant={{ sm: 'subtitle!', md: 'h6' }} sx={typoStyles}>
+                  {channelTitle}
+                  <CheckCircle sx={{ fontSize: 12, ml: "5px" }} />
+                </Typography>
+              </Link>
+              <Stack direction="row" gap="20px" alignItems="center">
+                <Typography variant='subtitle1' sx={{ opacity: 0.5 }}>
+                  {parseInt(viewCount).toLocaleString()} views
+                </Typography>
+                <Typography variant='subtitle1' sx={{ opacity: 0.5 }}>
+                  {parseInt(likeCount).toLocaleString()} likes
+                </Typography>
+              </Stack>
+            </Stack>
           </Box>
         </Box>
+        <Box px={2} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center">
+          <Videos videos={relatedVideos} direction="column" />
+        </Box>
       </Stack>
+
     </Box>
   );
 };
