@@ -11,13 +11,11 @@ const ChannelDetail = () => {
   useEffect(() => {
     fetchFromApi(`channels?part=snippet&id=${id}`)
       .then(data => {
-        console.log(data);
         return setChannelDetail(data?.items[0]);
       });
 
     fetchFromApi(`search?channelId=${id}&part=snippet&order=date`)
       .then(data => {
-        console.log(data);
         return setVideos(data?.items);
       });
   }, [id]);
@@ -36,9 +34,8 @@ const ChannelDetail = () => {
         <ChannelCard channelDetail={channelDetail} marginTop="-110px" bgcolor="transparent" />
       </Box>
       <Box display="flex" p="2">
-        <Box sx={{ mr: { sm: "100px" } }}>
-          <Videos videos={videos} />
-        </Box>
+        <Box sx={{ mr: { sm: "100px" } }} />
+        <Videos videos={videos} />
       </Box>
     </Box>
   );
