@@ -53,7 +53,7 @@ const VideoDetail = () => {
               py={1}
               px={2}
             >
-              <Link to={`channel/${channelId}`}>
+              <Link to={`/channel/${channelId}`}>
                 <Typography variant={{ sm: 'subtitle!', md: 'h6' }} sx={typoStyles}>
                   {channelTitle}
                   <CheckCircle sx={{ fontSize: 12, ml: "5px" }} />

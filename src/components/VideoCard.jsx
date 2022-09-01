@@ -26,7 +26,8 @@ const VideoCard = ({ video: {
     <Card sx={
       {
         width: { xs: "358px", sm: "358px", md: "320px" },
-        borderRadius: 0
+        borderRadius: 0,
+        boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.75)"
       }
     }>
       <Link to={videoId ? `/video/${videoId}` : demoThumbnailUrl}>
@@ -35,23 +36,24 @@ const VideoCard = ({ video: {
           alt={snippet?.title}
           sx={{ width: { xs: "100%", sm: "358px" }, height: 201 }}
         />
-        <CardContent sx={{ backgroundColor: "#979ff7", height: "106px" }} >
-
-          {/*Loading content from video prop and demo content from constants.js*/}
-          <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
-            <Typography variant="subtitle1" fontWeight="bold" color="#000">
-              {snippet?.title.slice(0, 60) || demoVideoTitle}
-            </Typography>
-          </Link>
-
-          <Link to={snippet?.channelId ? `/video/${snippet?.channelId}` : demoChannelUrl}>
-            <Typography variant="subtitle2" fontWeight="bold" color="rgba(0, 0, 0, 0.5)" sx={typoStyles} >
-              {snippet?.channelTitle.slice(0, 60) || demoChannelTitle}
-              <CheckCircle sx={{ color: "rgba(0, 0, 0, 0.5)", fontSize: 12, ml: "5px" }} />
-            </Typography>
-          </Link>
-        </CardContent>
       </Link>
+      <CardContent sx={{ backgroundColor: "#979ff7", height: "106px" }} >
+
+        {/*Loading content from video prop and demo content from constants.js*/}
+        <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
+          <Typography variant="subtitle1" fontWeight="bold" color="#000">
+            {snippet?.title.slice(0, 60) || demoVideoTitle}
+          </Typography>
+        </Link>
+
+        <Link to={snippet?.channelId ? `/channel/${snippet?.channelId}` : demoChannelUrl}>
+          <Typography variant="subtitle2" fontWeight="bold" color="rgba(0, 0, 0, 0.5)" sx={typoStyles} >
+            {snippet?.channelTitle.slice(0, 60) || demoChannelTitle}
+            <CheckCircle sx={{ color: "rgba(0, 0, 0, 0.5)", fontSize: 12, ml: "5px" }} />
+          </Typography>
+        </Link>
+      </CardContent>
+
     </Card>
   );
 };
